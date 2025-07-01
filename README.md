@@ -49,18 +49,15 @@ The goal of this assignment is to:
    - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
    - [Wave Accessibility Checker](https://wave.webaim.org/)
 
-4. Update the `<aside>` element list in the `index.html` file.
-   - Inside the `<aside>` list, describe each error and provide an explanation of the resolution.
-
-5. Resolve all identified errors in the `index.html` and `style.css` files by:
+4. Resolve all identified errors in the `index.html` and `style.css` files by:
    - Commenting out the original error code.
    - Adding the corrected code directly below the commented-out error code.
 
-6. Once all errors are corrected:
+5. Once all errors are corrected:
    - Commit your changes and push them to your own GitHub repository.
    - Deploy the corrected project to GitHub Pages.
 
-7. Submit your GitHub repository link and GitHub Pages link as instructed in the course.
+6. Submit your GitHub repository link and GitHub Pages link as instructed in the course.
 
 ## Tools and Resources
 
