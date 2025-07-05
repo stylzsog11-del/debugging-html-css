@@ -1,75 +1,116 @@
-# Debugging Assignment Files
+## Documented HTML Errors and Fixes
 
-Welcome to the Debugging Assignment repository! This repository contains the resources for the debugging assignment in the Web Design Tools course. Students will debug the provided HTML and CSS files to meet W3C standards and accessibility guidelines.
+### 1. Error: Element meta is missing required attributes
 
-## Files Included
-
-1. **index.html**
-   - Contains intentional errors for students to identify and fix.
-   - Errors include issues with HTML syntax, structure, accessibility, and semantic correctness.
-
-2. **style.css**
-   - Includes intentional errors related to CSS syntax, selectors, and properties.
-
-3. **Expected Site Design**
-   - Includes a screenshot of the error-free page (`images/expected-site-design.png`) to serve as a reference for students.
-
-### File Structure
-```
-debugging-html-css/
-├── css/
-│   ├── style.css
-│   ├── layout.css
-├── images/
-│   ├── easter-bunny-150-profile.png
-│   ├── expected-site-design.png
-├── index.html
-├── README.md
-```
-
-## Objective
-
-The goal of this assignment is to:
-- Develop debugging skills by identifying and correcting errors in HTML and CSS.
-- Improve familiarity with W3C standards and accessibility best practices.
-- Practice using debugging tools and validators to ensure standards-compliant code.
-- Learn to document errors and resolutions in a structured manner.
-
-## Instructions
-
-1. **Clone this repository** to your local machine:
-   ```bash
-   git clone <repository-url>
-   ```
-
-2. Open the `index.html` and `style.css` files in your favorite text editor or IDE (e.g., Visual Studio Code).
-
-3. Identify the errors in both files. Use tools like:
-   - [W3C HTML Validator](https://validator.w3.org/)
-   - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-   - [Wave Accessibility Checker](https://wave.webaim.org/)
-
-4. Resolve all identified errors in the `index.html` and `style.css` files by:
-   - Commenting out the original error code.
-   - Adding the corrected code directly below the commented-out error code.
-
-5. Once all errors are corrected:
-   - Commit your changes and push them to your own GitHub repository.
-   - Deploy the corrected project to GitHub Pages.
-
-6. Submit your GitHub repository link and GitHub Pages link as instructed in the course.
-
-## Tools and Resources
-
-- [W3C HTML Validator](https://validator.w3.org/)
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-- [Wave Accessibility Checker](https://wave.webaim.org/)
-- [MDN Web Docs](https://developer.mozilla.org/)
-
-## License
-
-This repository is for educational purposes only. All content is copyrighted by the course instructor and may not be distributed without permission.
+- **Where:** `<head>`, line 5  
+- **What was wrong:**  
+  ```html
+  <meta>
+  ```
+  The `<meta>` tag was missing required attributes such as `charset`, `name`, or `content`.
+- **How I fixed it:**  
+  I replaced it with a proper charset declaration:
+  ```html
+  <meta charset="UTF-8">
+  ```
 
 ---
 
-Happy debugging!
+### 2. Info: Trailing slash on void elements
+
+- **Where:** `<head>`, line 6  
+- **What was wrong:**  
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  ```
+  The trailing slash is unnecessary in HTML5 and can cause issues.
+- **How I fixed it:**  
+  I removed the trailing slash:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  ```
+
+---
+
+### 3. Error: `<img>` element missing alt attribute
+
+- **Where:** `<header>`, line 19  
+- **What was wrong:**  
+  ```html
+  <img src="easter-bunny-150-profile.png">
+  ```
+  The image did not have an `alt` attribute, which is required for accessibility.
+- **How I fixed it:**  
+  I added a descriptive `alt` attribute:
+  ```html
+  <img src="easter-bunny-150-profile.png" alt="Profile illustration of the Easter Bunny">
+  ```
+
+---
+
+### 4. Error: `<p>` not allowed as child of `<h3>`, unclosed `<h3>`, and open elements
+
+- **Where:** `<main>`, near line 60  
+- **What was wrong:**  
+  ```html
+  <h3>Enough Content
+    <p>You need enough content...</p>
+  </h3>
+  ```
+  A `<p>` cannot be a child of `<h3>`. The `<h3>` was also not closed properly, causing open element errors.
+- **How I fixed it:**  
+  I closed the `<h3>` before the `<p>` and moved the `<p>` outside:
+  ```html
+  <h3>Enough Content</h3>
+  <p>You need enough content...</p>
+  ```
+
+## Documented CSS Errors and Fixes
+
+
+```css
+/* ...existing code... */
+
+footer {
+    text-align: center;
+    background-color: #092834;
+    /* color: #B2; */ /* Invalid hex color */
+    color: #B2D732;
+    clear: both;
+}
+
+footer h2 {
+    color: #B2D732;
+}
+
+h1 {
+    font-family: 'Love Ya Like A Sister', cursive;
+    /* font-size: 5 vw; */ /* Invalid value, should be 5vw (no space) */
+    font-size: 5vw;
+    color: #B2D732;
+    text-align: center;
+    text-shadow: 3px 2px 5px #202020;
+    padding: 2vw;
+    margin: 0px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    /* line-height: 1.35me; */ /* Invalid unit, should be em */
+    line-height: 1.35em;
+    margin-top: 1em;
+}
+
+.error {
+    /* color: #FE27122; */ /* Invalid hex color */
+    color: #FE2712;
+}
+
+a:hover {
+    color: #2E6C85;
+    /* text-decoration: all; */ /* Invalid value */
+    text-decoration: underline;
+}
+
+/* ...existing code... */
+```
