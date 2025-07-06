@@ -67,7 +67,6 @@
 
 ## Documented CSS Errors and Fixes
 
-
 ```css
 /* ...existing code... */
 
@@ -114,3 +113,16 @@ a:hover {
 
 /* ...existing code... */
 ```
+
+## Documented layout.CSS Errors and Fixes
+
+```css
+
+/* Move these outside of aside block */
+aside dt {
+  font-weight: bold;
+}
+
+aside dd {
+  padding: 0 10px;
+}
